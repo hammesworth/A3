@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Laços e Vetores em C++</title>
+  <link rel="stylesheet" href="stylee.css" />
+</head>
+<body>
+
+<header>
+    <h1>Explorando while, do while, for e vetores de C++ 🛠️</h1>
+    <p>Um guia para iniciantes</p>
+    <p><a href="index.html">Ir para o Guia de HTML & CSS</a></p>
+    <p><a href="xml_git.html">Ir para o Guia de XML & Git</a></p>
+</header>
+
+    <main>
+  <div id="xml-intro">
+
+    <section>
+      <h2 class="subtitle">🔁 While</h2>
+      <p>O laço <code>while</code> executa um bloco de código <strong>enquanto</strong> uma condição for verdadeira.</p>
+      <pre class="code">
+int i = 0;
+while (i < 5) {
+    cout &lt;&lt; i &lt;&lt; endl;
+    i++;
+}
+      </pre>
+      <p><strong>Saída:</strong> 0 1 2 3 4</p>
+    </section>
+
+    <section>
+      <h2 class="subtitle">🔁 Do While</h2>
+      <p>Diferente do <code>while</code>, o <code>do while</code> garante que o código será executado pelo menos uma vez.</p>
+      <pre class="code">
+int i = 0;
+do {
+    cout &lt;&lt; i &lt;&lt; endl;
+    i++;
+} while (i < 5);
+      </pre>
+      <p><strong>Saída:</strong> 0 1 2 3 4</p>
+    </section>
+
+    <section>
+      <h2 class="subtitle">🔁 For</h2>
+      <p>O <code>for</code> é ideal quando já se sabe o número de repetições. Compacto e direto.</p>
+      <pre class="code">
+for (int i = 0; i &lt; 5; i++) {
+    cout &lt;&lt; i &lt;&lt; endl;
+}
+      </pre>
+      <p><strong>Saída:</strong> 0 1 2 3 4</p>
+    </section>
+
+    <section>
+      <h2 class="subtitle">📦 Vetores (Arrays)</h2>
+      <p>Um vetor armazena uma sequência de valores do mesmo tipo. O índice começa em 0.</p>
+      <pre class="code">
+int numeros[3] = {10, 20, 30};
+
+for (int i = 0; i &lt; 3; i++) {
+    cout &lt;&lt; numeros[i] &lt;&lt; endl;
+}
+      </pre>
+      <p><strong>Saída:</strong> 10 20 30</p>
+      <p>Também é possível declarar o vetor sem inicializar:</p>
+      <pre class="code">
+int notas[5]; // valores indefinidos inicialmente
+      </pre>
+    </section>
+
+</main>
+
+    <footer>
+      <p style="text-align: center; margin-top: 40px;">💻 Teste os exemplos em um compilador online, vulgo GDB.</p>
+      <p>&copy; Lucas Willian</p>
+    </footer>
+  </div>
+</body>
+</html>

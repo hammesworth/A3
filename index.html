@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo HTML & CSS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>Aprendendo HTML & CSS 🚀</h1>
+        <p>Um guia para iniciantes sobre os blocos de construção da web.</p>
+        <p><a href="cpp.html">Ir para o Guia de while e vetores C++</a></p>
+        <p><a href="xml_git.html">Ir para o Guia de XML & Git</a></p>
+    </header>
+
+    <main>
+        <section id="html-intro">
+            <h2>O que é HTML? (HyperText Markup Language)</h2>
+            <p>HTML é a linguagem de marcação que usamos para estruturar o conteúdo de uma página da web. Pense nisso como o <strong>esqueleto</strong> 🦴 de um site. Ele usa "tags" para definir elementos como títulos, parágrafos, imagens e links.</p>
+
+            <h3>Estrutura Básica de uma Página HTML</h3>
+            <p>Toda página HTML segue esta estrutura fundamental:</p>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;!-- Metadados e links para CSS/JS --&gt;
+    &lt;title&gt;Título da Página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- Conteúdo visível da página --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </section>
+
+        <hr>
+
+        <section id="html-tags">
+            <h2>Tags HTML Essenciais</h2>
+            <p>Aqui estão algumas das tags mais comuns que você usará:</p>
+            <ul>
+                <li><code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code>: Títulos e subtítulos.</li>
+                <li><code>&lt;p&gt;</code>: Parágrafos de texto.</li>
+                <li><code>&lt;a href="url"&gt;</code>: Links (âncoras).</li>
+                <li><code>&lt;img src="imagem.jpg" alt="descrição"&gt;</code>: Imagens.</li>
+                <li><code>&lt;div&gt;</code>: Um contêiner genérico para agrupar elementos.</li>
+                <li><code>&lt;span&gt;</code>: Um contêiner em linha para pequenos trechos de texto.</li>
+                <li><code>&lt;ul&gt;</code> e <code>&lt;li&gt;</code>: Listas não ordenadas (com marcadores).</li>
+                <li><code>&lt;ol&gt;</code> e <code>&lt;li&gt;</code>: Listas ordenadas (com números).</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="css-intro">
+            <h2>O que é CSS? (Cascading Style Sheets)</h2>
+            <p>CSS é a linguagem que usamos para estilizar nossa página HTML. Se o HTML é o esqueleto, o CSS é a <strong>pele, as roupas e o estilo</strong> 🎨. Ele controla cores, fontes, espaçamento, layout e muito mais.</p>
+
+            <h3>Como o CSS funciona?</h3>
+            <p>O CSS funciona selecionando elementos HTML e aplicando "regras" a eles. Uma regra consiste em um <strong>seletor</strong> e um bloco de declaração com <strong>propriedades</strong> e <strong>valores</strong>.</p>
+            <pre><code>/* Isso é um comentário em CSS */
+
+seletor {
+  propriedade: valor;
+  outra-propriedade: outro-valor;
+}</code></pre>
+
+            <h4>Exemplo Prático:</h4>
+            <p>Para mudar a cor de todos os parágrafos (<code>&lt;p&gt;</code>) para azul, o código CSS seria:</p>
+            <pre><code>p {
+  color: blue;
+  font-size: 16px;
+}</code></pre>
+        </section>
+
+        <hr>
+
+        <section id="css-connecting">
+            <h2>Conectando o CSS ao HTML</h2>
+            <p>Para que seu CSS funcione, você precisa vinculá-lo ao seu arquivo HTML. Isso é feito usando a tag <code>&lt;link&gt;</code> dentro da seção <code>&lt;head&gt;</code> do seu HTML.</p>
+            <pre><code>&lt;head&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;</code></pre>
+             <p>O atributo <code>href</code> aponta para o nome do seu arquivo CSS. É uma boa prática manter os arquivos HTML e CSS separados para melhor organização.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Continue praticando para superar as aulas SENSACIONAIS do Escalfoni</p>
+        <p>&copy; Lucas Willian</p>
+    </footer>
+
+</body>
+</html>

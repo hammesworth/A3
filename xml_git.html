@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aprendendo XML & Git</title>
+<link rel="stylesheet" href="stylew.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&amp;display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <h1>Explorando XML & Git 🛠️</h1>
+    <p>Um guia para iniciantes</p>
+    <p><a href="index.html">Ir para o Guia de HTML & CSS</a></p>
+    <p><a href="cpp.html">Ir para o Guia de while e vetores C++</a></p>
+</header>
+
+<main>
+    <section id="xml-intro">
+        <h2>O que é XML? (Extensible Markup Language)</h2>
+        <p>XML é uma linguagem de marcação projetada para transportar e armazenar dados. Diferente do HTML, que se concentra na apresentação, o XML se concentra na <strong>estrutura e descrição dos dados</strong> 📦. É extensível porque você pode definir suas próprias tags para descrever os dados.</p>
+
+        <h3>Estrutura Básica de um Documento XML</h3>
+        <p>Um documento XML possui uma estrutura hierárquica com um elemento raiz e pode conter outros elementos aninhados.</p>
+        <pre><code>?xml version="1.0" encoding="UTF-8"</code>
+<code>&lt;livraria&gt;</code>
+<code>&lt;livro categoria="ficção"&gt;</code>
+<code>&lt;titulo&gt;O Senhor dos Anéis&lt;/titulo&gt;</code>
+<code>&lt;autor&gt;J.R.R. Tolkien&lt;/autor&gt;</code>
+<code>&lt;ano&gt;1954&lt;/ano&gt;</code>
+<code>&lt;/livro&gt;</code>
+<code>&lt;livro categoria="programação"&gt;</code>
+<code>&lt;titulo&gt;Clean Code&lt;/titulo&gt;</code>
+<code>&lt;autor&gt;Robert C. Martin&lt;/autor&gt;</code>
+<code>&lt;ano&gt;2008&lt;/ano&gt;</code>
+<code>&lt;/livro&gt;</code>
+<code>&lt;/livraria&gt;</code>
+</livraria>
+</pre>
+<p>Observe como as tags descrevem o significado dos dados (título, autor, ano) em vez de como eles devem ser exibidos.</p>
+</section>
+
+    <hr>
+
+    <section id="xml-elements">
+        <h2>Elementos e Atributos XML</h2>
+        <p>Os documentos XML são construídos a partir de elementos. Cada elemento tem uma tag de abertura e uma tag de fechamento.</p>
+        <pre><code>&lt;elemento&gt;Conteúdo do elemento&lt;/elemento&gt;</code></pre>
+        <p>Os elementos também podem ter atributos, que fornecem informações adicionais sobre o elemento.</p>
+        <pre><code>&lt;elemento atributo="valor"&gt;Conteúdo&lt;/elemento&gt;</code></pre>
+        <p>No exemplo anterior, <code>categoria="ficção"</code> é um atributo do elemento <code>&lt;livro&gt;</code>.</p>
+    </section>
+
+    <hr>
+
+    <section id="git-intro">
+        <h2>O que é Git?</h2>
+        <p>Git é um sistema de controle de versão distribuído, amplamente utilizado para rastrear alterações em arquivos ao longo do tempo e colaborar em projetos. Pense nele como um <strong>histórico completo</strong> 📜 das suas modificações, permitindo que você volte a versões anteriores, compare mudanças e trabalhe com outras pessoas de forma eficiente.</p>
+
+        <h3>Conceitos Fundamentais do Git</h3>
+        <ul>
+            <li><strong>Repositório:</strong> Um diretório que contém todos os arquivos do seu projeto e o histórico de suas alterações (o banco de dados do Git).</li>
+            <li><strong>Commit:</strong> Uma "foto" do seu projeto em um determinado momento. Cada commit tem uma mensagem descrevendo as alterações feitas.</li>
+            <li><strong>Branch:</strong> Uma linha de desenvolvimento independente. Permite trabalhar em novas funcionalidades ou correções sem afetar a versão principal do projeto.</li>
+            <li><strong>Merge:</strong> O processo de combinar as alterações de uma branch em outra (geralmente a branch principal).</li>
+            <li><strong>Clone:</strong> Criar uma cópia local de um repositório remoto (como no GitHub, GitLab ou Bitbucket).</li>
+        </ul>
+    </section>
+
+    <hr>
+
+    <section id="git-commands">
+        <h2>Comandos Git Essenciais</h2>
+        <p>Aqui estão alguns dos comandos Git mais comuns que você usará no seu terminal:</p>
+        <ul>
+           <li><code>git init</code>: Inicializa um novo repositório Git no diretório atual.</li>
+            <li><code>git clone &lt;url&gt;</code>: Clona um repositório remoto para a sua máquina local.</li>
+            <li><code>git add &lt;arquivo(s)&gt;</code>: Adiciona as alterações do(s) arquivo(s) à área de staging (preparação para o commit).</li>
+            <li><code>git commit -m "Mensagem do commit"</code>: Salva as alterações da área de staging no histórico do repositório com uma mensagem descritiva.</li>
+            <li><code>git status</code>: Exibe o estado do seu repositório (quais arquivos foram modificados, adicionados, etc.).</li>
+            <li><code>git log</code>: Exibe o histórico de commits.</li>
+            <li><code>git branch</code>: Lista suas branches locais.</li>
+            <li><code>git checkout &lt;nome_da_branch&gt;</code>: Muda para a branch especificada.</li>
+            <li><code>git merge &lt;nome_da_branch&gt;</code>: Incorpora as alterações da branch especificada na branch atual.</li>
+            <li><code>git push &lt;remote&gt; &lt;branch&gt;</code>: Envia seus commits locais para um repositório remoto.</li>
+            <li><code>git pull &lt;remote&gt; &lt;branch&gt;</code>: Baixa as alterações de um repositório remoto e as incorpora na sua branch local.</li>
+        </ul>
+    </section>
+</main>
+
+<footer>
+    <p>Por que essas duas coisas estão na mesma categoria? Sei lá</p>
+    <p>&copy; Lucas Willian</p>
+</footer>
+</body>
+</html>
