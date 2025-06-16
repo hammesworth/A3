@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fundamentos de Arquitetura Computacional - Guia Completo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+    <h1>Fundamentos de Arquitetura Computacional 💻</h1>
+    <p>Um guia aprofundado sobre os sistemas de numeração, álgebra booleana, portas lógicas e prototipagem que constituem a espinha dorsal da computação moderna.</p>
+    <nav>
+        <p><a href="index.html">Ir para o Guia de HTML & CSS</a></p>
+        <p><a href="xml_git.html">Ir para o Guia de XML & Git</a></p>
+        <p><a href="cppbasic.html">Ir para o guia básico de C++</a></p>
+    </nav>
+</header>
+
+<main>
+<div id="xml-intro">
+
+    <section>
+      <h2 class="subtitle">🔢 Bases Numéricas: A Linguagem das Máquinas</h2>
+      <p>A arquitetura de computadores é construída sobre o conceito de sistemas de numeração. Enquanto humanos usam a base 10 por conveniência (provavelmente por termos 10 dedos), as máquinas precisam de um sistema que reflita seu estado físico: a presença ou ausência de corrente elétrica. É aqui que as diferentes bases entram em jogo.</p>
+      <ul>
+        <li><strong>Decimal (Base 10):</strong> O sistema posicional que usamos, composto por dez dígitos (0-9). O valor de um dígito depende de sua posição, que corresponde a uma potência de 10. Ex: $253 = (2 \times 10^2) + (5 \times 10^1) + (3 \times 10^0)$.</li>
+        <li><strong>Binário (Base 2):</strong> A linguagem nativa e fundamental de todo circuito digital. Utiliza apenas dois dígitos: <strong>0</strong> (desligado, falso, sem tensão) e <strong>1</strong> (ligado, verdadeiro, com tensão). Cada dígito binário é chamado de <strong>bit</strong>.
+            <ul>
+                <li>Um grupo de 4 bits é um <strong>nibble</strong>.</li>
+                <li>Um grupo de 8 bits forma um <strong>byte</strong>, a unidade básica de armazenamento de dados.</li>
+            </ul>
+        </li>
+        <li><strong>Octal (Base 8):</strong> Utiliza oito dígitos (0-7). Foi historicamente importante em sistemas de computação mais antigos (como os mainframes da IBM e o PDP-8) porque a conversão de e para binário é trivial: cada dígito octal corresponde exatamente a um grupo de <strong>3 bits</strong>. Em linguagens como C/C++, números octais são prefixados com um `0` (ex: `0755`).</li>
+        <li><strong>Hexadecimal (Base 16):</strong> O sistema preferido por desenvolvedores para representar dados binários de forma concisa. Utiliza dezesseis símbolos: os dígitos 0-9 e as letras A-F para representar os valores de 10 a 15. É extremamente útil para visualizar endereços de memória, representar cores (ex: `#FF0000` para vermelho) e em depuração de baixo nível. Cada dígito hexadecimal corresponde a um <strong>nibble</strong> (4 bits). Em programação, o prefixo `0x` é comum (ex: `0xFF`).</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="subtitle">🔄 Conversão Detalhada entre Bases</h2>
+      <p>A habilidade de traduzir valores entre essas bases é crucial para qualquer profissional de tecnologia.</p>
+
+      <h3 class="sub-subtitle">Decimal ↔️ Outras Bases</h3>
+      <p><strong>Decimal para Binário (Divisões por 2):</strong></p>
+      <pre class="code">
+Exemplo: Converter 181₁₀ para binário.
+
+181 ÷ 2 = 90, resto 1
+ 90 ÷ 2 = 45, resto 0
+ 45 ÷ 2 = 22, resto 1
+ 22 ÷ 2 = 11, resto 0
+ 11 ÷ 2 = 5,  resto 1
+  5 ÷ 2 = 2,  resto 1
+  2 ÷ 2 = 1,  resto 0
+  1 ÷ 2 = 0,  resto 1
+
+Lendo os restos de baixo para cima: 10110101₂.
+      </pre>
+
+      <p><strong>Binário para Decimal (Soma das Potências de 2):</strong></p>
+      <pre class="code">
+Exemplo: Converter 10110101₂ para decimal.
+
+(1×2⁷) + (0×2⁶) + (1×2⁵) + (1×2⁴) + (0×2³) + (1×2²) + (0×2¹) + (1×2⁰)
+= 128 + 0 + 32 + 16 + 0 + 4 + 0 + 1
+= 181₁₀.
+      </pre>
+
+      <p><strong>Decimal para Octal (Divisões por 8):</strong></p>
+       <pre class="code">
+Exemplo: Converter 181₁₀ para octal.
+
+181 ÷ 8 = 22, resto 5
+ 22 ÷ 8 = 2,  resto 6
+  2 ÷ 8 = 0,  resto 2
+
+Lendo de baixo para cima: 265₈.
+       </pre>
+
+      <h3 class="sub-subtitle">Conversões Rápidas (Binário ↔️ Octal/Hex)</h3>
+      <p>Essas são as conversões mais rápidas e úteis no dia a dia da programação de baixo nível, pois não requerem passagem pela base decimal.</p>
+
+      <p><strong>Binário para Octal (Grupos de 3 bits):</strong></p>
+      <pre class="code">
+Exemplo: Converter 10110101₂ para octal.
+
+1. Agrupe de 3 em 3, da direita para a esquerda (complete com zeros se necessário):
+   010  110  101
+
+2. Converta cada grupo:
+   010₂ = 2₈
+   110₂ = 6₈
+   101₂ = 5₈
+
+Resultado: 265₈.
+      </pre>
+
+      <p><strong>Binário para Hexadecimal (Grupos de 4 bits):</strong></p>
+      <pre class="code">
+Exemplo: Converter 10110101₂ para hexadecimal.
+
+1. Agrupe de 4 em 4, da direita para a esquerda:
+   1011  0101
+
+2. Converta cada grupo (nibble):
+   1011₂ = 11₁₀ = B₁₆
+   0101₂ =  5₁₀ = 5₁₆
+
+Resultado: B5₁₆.
+      </pre>
+    </section>
+
+    <section>
+      <h2 class="subtitle">⚙️ Portas Lógicas e Álgebra de Boole</h2>
+      <p>Portas lógicas são circuitos, geralmente compostos por transistores, que executam uma operação da <strong>Álgebra Booleana</strong>. Esta álgebra, criada por George Boole, é a matemática por trás da lógica digital. Ao combinar estas portas, podemos criar circuitos complexos que realizam desde somas (somadores) até o processamento de instruções em uma CPU.</p>
+      
+      <p><strong>Porta AND (E / Conjunção Lógica):</strong> A saída é 1 se, e somente se, <strong>todas</strong> as entradas forem 1. Expressão: $Q = A \cdot B$ ou $Q = A \land B$.</p>
+      <pre class="code">Tabela Verdade - AND
+A | B | Q
+--|---|--
+0 | 0 | 0
+0 | 1 | 0
+1 | 0 | 0
+1 | 1 | 1</pre>
+
+      <p><strong>Porta OR (OU / Disjunção Lógica):</strong> A saída é 1 se <strong>qualquer</strong> das entradas for 1. Expressão: $Q = A + B$ ou $Q = A \lor B$.</p>
+      <pre class="code">Tabela Verdade - OR
+A | B | Q
+--|---|--
+0 | 0 | 0
+0 | 1 | 1
+1 | 0 | 1
+1 | 1 | 1</pre>
+
+      <p><strong>Porta NOT (NÃO / Inversor):</strong> A saída é o inverso da entrada única. Expressão: $Q = \overline{A}$ ou $Q = \neg A$.</p>
+      <pre class="code">Tabela Verdade - NOT
+A | Q
+--|--
+0 | 1
+1 | 0</pre>
+
+      <p><strong>Porta NAND (NÃO-E):</strong> É a negação de uma porta AND. É uma <strong>porta universal</strong>, significando que qualquer outra porta pode ser construída usando apenas portas NAND. Expressão: $Q = \overline{A \cdot B}$.</p>
+      <pre class="code">Tabela Verdade - NAND
+A | B | Q
+--|---|--
+0 | 0 | 1
+0 | 1 | 1
+1 | 0 | 1
+1 | 1 | 0</pre>
+
+      <p><strong>Porta NOR (NÃO-OU):</strong> É a negação de uma porta OR. Também é uma <strong>porta universal</strong>. Expressão: $Q = \overline{A + B}$.</p>
+      <pre class="code">Tabela Verdade - NOR
+A | B | Q
+--|---|--
+0 | 0 | 1
+0 | 1 | 0
+1 | 0 | 0
+1 | 1 | 0</pre>
+
+      <p><strong>Porta XOR (OU Exclusivo):</strong> A saída é 1 se as entradas forem <strong>diferentes</strong>. É fundamental para circuitos aritméticos. Expressão: $Q = A \oplus B$.</p>
+      <pre class="code">Tabela Verdade - XOR
+A | B | Q
+--|---|--
+0 | 0 | 0
+0 | 1 | 1
+1 | 0 | 1
+1 | 1 | 0</pre>
+    </section>
+
+    <section>
+        <h2 class="subtitle">🔌 Protoboards: Da Teoria à Prática</h2>
+        <p>A protoboard (ou breadboard) é uma placa de prototipagem que permite montar e testar circuitos sem solda. É a ponte entre o diagrama esquemático e o circuito funcional.</p>
+        <p>A sua estrutura interna é projetada para máxima eficiência:</p>
+        <ul>
+            <li><strong>Tiras de Terminais:</strong> São as fileiras horizontais no corpo central. Todos os 5 furos em uma mesma fileira (até a divisão central) estão eletricamente conectados. São usadas para conectar os terminais dos componentes (resistores, LEDs, etc).</li>
+            <li><strong>Divisão Central:</strong> O canal no meio da protoboard serve para acomodar Circuitos Integrados (CIs) no formato DIP (Dual In-line Package), de modo que os pinos de cada lado do CI fiquem em tiras de terminais separadas, sem causar curto-circuito.</li>
+            <li><strong>Tiras de Barramento (Alimentação):</strong> São as longas colunas verticais nas laterais, marcadas com linhas vermelhas (+) e azuis/pretas (-). Todos os furos em uma mesma coluna estão conectados, servindo para distribuir a tensão de alimentação (VCC) e o terra (GND) por todo o circuito de forma organizada.</li>
+        </ul>
+        <p><strong>Boas Práticas de Prototipagem:</strong></p>
+        <ol>
+            <li><strong>Planeje Primeiro:</strong> Sempre comece com um diagrama esquemático do seu circuito.</li>
+            <li><strong>Use Cores:</strong> Adote uma convenção de cores para os fios (jumpers). Ex: vermelho para VCC, preto para GND, outras cores para sinais. Isso facilita a depuração.</li>
+            <li><strong>Mantenha Organizado:</strong> Corte os fios e os terminais dos componentes no comprimento adequado para que fiquem rentes à placa. Isso evita contatos acidentais e torna o circuito mais legível.</li>
+            <li><strong>Verifique Tudo:</strong> Antes de ligar a alimentação, revise todas as conexões para garantir que correspondem ao seu diagrama. Um erro pode danificar permanentemente seus componentes.</li>
+        </ol>
+    </section>
+
+</div>
+
+</main>
+
+    <footer>
+        <p style="text-align: center; margin-top: 40px;">💡 Para solidificar este conhecimento, experimente montar um somador de 1 bit usando portas lógicas em um simulador como o Tinkercad ou o Logisim. Isso conectará a teoria da Álgebra Booleana com a prática dos circuitos digitais.</p>
+        <p>&copy; Lucas Willian</p>
+    </footer>
+
+</body>
+</html>

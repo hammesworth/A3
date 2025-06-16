@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Guia de Informática Básica - Componentes e Dicas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+    <h1>Guia de Informática Básica 🖥️</h1>
+    <p>Um guia detalhado para entender o funcionamento do seu computador, desde os componentes internos e periféricos até dicas e atalhos para o dia a dia.</p>
+    <nav>
+        <p><a href="index.html">Ir para o Guia de HTML & CSS</a></p>
+        <p><a href="xml_git.html">Ir para o Guia de XML & Git</a></p>
+        <p><a href="cppbasic.html">Ir para o guia básico de C++</a></p>
+    </nav>
+</header>
+
+<main>
+<div id="xml-intro">
+
+    <section>
+      <h2 class="subtitle">🔌 Portas e Conectores: As Entradas do Computador</h2>
+      <p>As portas são as interfaces físicas que permitem a conexão de outros dispositivos (periféricos) ao seu computador. Cada uma tem uma função específica.</p>
+      <ul>
+        <li><strong>USB (Universal Serial Bus):</strong> A porta mais comum e versátil. Usada para conectar mouses, teclados, pen drives, HDs externos, smartphones e muito mais.
+            <ul>
+                <li><strong>USB-A:</strong> O conector retangular tradicional.</li>
+                <li><strong>USB-C:</strong> O conector mais moderno, oval e reversível. Além de dados, pode transmitir energia (para carregar o notebook) e vídeo.</li>
+            </ul>
+        </li>
+        <li><strong>HDMI (High-Definition Multimedia Interface):</strong> A principal porta para conectar monitores e TVs. Transmite áudio e vídeo em alta definição por um único cabo.</li>
+        <li><strong>DisplayPort:</strong> Uma alternativa ao HDMI, muito comum em monitores gamers por suportar taxas de atualização mais altas.</li>
+        <li><strong>Ethernet (RJ-45):</strong> Porta usada para conectar o computador à internet ou a uma rede local via cabo. Oferece uma conexão mais estável e rápida que o Wi-Fi.</li>
+        <li><strong>Conectores de Áudio (P2/P3):</strong> Usados para fones de ouvido, microfones e caixas de som. Geralmente são identificados por cores (verde para saída de áudio, rosa para microfone).</li>
+      </ul>
+    </section>
+
+    <section>
+        <h2 class="subtitle">🖱️ Periféricos: A Interação com a Máquina</h2>
+        <p>Periféricos são todos os dispositivos que você conecta ao computador para adicionar funcionalidades. Eles se dividem em três categorias principais:</p>
+
+        <h3 class="sub-subtitle">Dispositivos de Entrada</h3>
+        <p>Enviam dados <strong>para</strong> o computador.</p>
+        <pre class="code">
+- Teclado: Para digitação de textos e comandos.
+- Mouse: Para controlar o cursor e interagir com a interface gráfica.
+- Microfone: Para capturar som.
+- Webcam: Para capturar imagens e vídeos.
+        </pre>
+
+        <h3 class="sub-subtitle">Dispositivos de Saída</h3>
+        <p>Recebem dados <strong>do</strong> computador.</p>
+        <pre class="code">
+- Monitor: Exibe as informações visuais (a interface do sistema, vídeos, etc.).
+- Impressora: Produz cópias físicas de documentos e imagens.
+- Caixas de som / Fones de ouvido: Reproduzem o áudio processado pelo computador.
+        </pre>
+        
+        <h3 class="sub-subtitle">Dispositivos de Entrada e Saída (E/S)</h3>
+        <p>Enviam e recebem dados do computador.</p>
+        <pre class="code">
+- Headset: Combina um fone de ouvido (saída) com um microfone (entrada).
+- HD Externo / Pen Drive: Gravam (saída) e leem (entrada) arquivos.
+- Impressora Multifuncional: Imprime (saída) e digitaliza (entrada) documentos.
+        </pre>
+    </section>
+
+    <section>
+      <h2 class="subtitle">⚙️ Componentes Internos: O Coração do PC</h2>
+      <p>Dentro do gabinete (ou do corpo do notebook) estão as peças que realmente fazem o computador funcionar. Elas trabalham em conjunto para processar informações.</p>
+      
+      <p><strong>CPU (Central Processing Unit - Unidade Central de Processamento):</strong> Considerada o "cérebro" do computador. É responsável por executar cálculos e a maioria das instruções dos programas. Sua velocidade é medida em Gigahertz (GHz) e sua capacidade de multitarefa é influenciada pelo número de <strong>núcleos (cores)</strong> e <strong>threads</strong>.</p>
+      
+      <p><strong>GPU (Graphics Processing Unit - Unidade de Processamento Gráfico):</strong> Especializada em processar e renderizar imagens, vídeos e animações 3D. Essencial para jogos, edição de vídeo e softwares de modelagem. Pode ser <strong>integrada</strong> (inclusa no processador, para tarefas básicas) ou <strong>dedicada</strong> (uma placa separada, para alto desempenho).</p>
+      
+      <p><strong>Memória RAM (Random Access Memory - Memória de Acesso Aleatório):</strong> Uma memória ultrarrápida e <strong>volátil</strong> (os dados se apagam quando o PC desliga). Ela armazena temporariamente os dados dos programas e arquivos que estão em uso no momento. Quanto mais RAM, mais tarefas o computador consegue executar simultaneamente sem lentidão.</p>
+      
+      <p><strong>Armazenamento (HDD e SSD):</strong> Onde seus arquivos, programas e o sistema operacional ficam guardados permanentemente (memória <strong>não-volátil</strong>).</p>
+        <ul>
+            <li><strong>HDD (Hard Disk Drive):</strong> Disco rígido mecânico, com partes móveis. Oferece grande capacidade de armazenamento por um preço baixo, mas é mais lento e frágil.</li>
+            <li><strong>SSD (Solid-State Drive):</strong> Usa chips de memória flash (sem partes móveis). É muito mais rápido, silencioso e durável que um HDD, tornando o sistema operacional e os programas muito mais ágeis.</li>
+        </ul>
+
+      <p><strong>Placa-Mãe (Motherboard):</strong> A principal placa de circuito do PC. Ela interliga todos os componentes — CPU, GPU, RAM, armazenamento — permitindo que eles se comuniquem. Ela também contém as portas e conectores externos.</p>
+      
+      <p><strong>Fonte de Alimentação (PSU - Power Supply Unit):</strong> Converte a energia elétrica da tomada (corrente alternada) para as tensões corretas que os componentes do computador precisam (corrente contínua) para funcionar.</p>
+    </section>
+    
+    <section>
+        <h2 class="subtitle">⌨️ Atalhos Essenciais de Teclado (Windows)</h2>
+        <p>Usar atalhos de teclado aumenta drasticamente sua produtividade. Aqui estão os mais importantes:</p>
+        <ul>
+            <li><strong>Ctrl + C:</strong> Copia o item selecionado (texto, arquivo).</li>
+            <li><strong>Ctrl + X:</strong> Recorta o item selecionado.</li>
+            <li><strong>Ctrl + V:</strong> Cola o item copiado ou recortado.</li>
+            <li><strong>Ctrl + Z:</strong> Desfaz a última ação.</li>
+            <li><strong>Alt + Tab:</strong> Alterna entre as janelas abertas.</li>
+            <li><strong>Ctrl + Alt + Del</strong> ou <strong>Ctrl + Shift + Esc:</strong> Abre o Gerenciador de Tarefas, útil para fechar programas travados.</li>
+            <li><strong>Tecla Windows + D:</strong> Mostra/Oculta a Área de Trabalho.</li>
+            <li><strong>Tecla Windows + E:</strong> Abre o Explorador de Arquivos.</li>
+            <li><strong>Tecla Windows + L:</strong> Bloqueia a tela do computador.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2 class="subtitle">💡 Dicas para Windows</h2>
+        <p>Algumas dicas simples podem melhorar muito sua experiência de uso.</p>
+        <ol>
+            <li><strong>Gerenciador de Tarefas:</strong> Se um programa não responde, pressione `Ctrl + Shift + Esc`, selecione o programa na lista e clique em "Finalizar Tarefa". Na aba "Inicializar", você pode desabilitar programas que iniciam com o Windows para deixar o boot mais rápido.</li>
+            <li><strong>Explorador de Arquivos:</strong> Mantenha seus arquivos organizados em pastas (Documentos, Imagens, Músicas). Você pode fixar pastas usadas com frequência no "Acesso rápido" arrastando-as para a barra lateral esquerda.</li>
+            <li><strong>Múltiplas Áreas de Trabalho:</strong> Pressione `Tecla Windows + Tab` para ver a "Visão de Tarefas". No topo, você pode criar uma "Nova área de trabalho" para organizar janelas de diferentes projetos (ex: uma para trabalho, outra para lazer).</li>
+            <li><strong>Captura de Tela:</strong> Use `Tecla Windows + Shift + S` para abrir a Ferramenta de Captura. Ela permite selecionar uma parte da tela para copiar ou salvar como imagem, o que é muito mais prático do que tirar uma foto da tela inteira.</li>
+        </ol>
+    </section>
+
+</div>
+
+</main>
+
+    <footer>
+        <p style="text-align: center; margin-top: 40px;">💡 O conhecimento básico sobre o hardware e o software do seu computador é o primeiro passo para resolver problemas e usar a ferramenta de forma mais eficiente. Explore as configurações e não tenha medo de aprender!</p>
+        <p>&copy; Lucas Willian</p>
+    </footer>
+
+</body>
+</html>

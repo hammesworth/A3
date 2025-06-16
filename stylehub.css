@@ -1,0 +1,150 @@
+ /* --- 1. Reset e Configurações Globais --- */
+        :root {
+            /* Paleta de Cores */
+            --primary-color: #007BFF;
+            --primary-hover: #0056b3;
+            --text-title: #1a202c;
+            --text-body: #343a40;
+            --text-muted: #6c757d;
+            --bg-color: #f4f7f9;
+            --surface-color: #ffffff;
+            --border-color: #e9ecef;
+            --code-bg-dark: #282c34;
+            --code-bg-light: #e9ecef;
+            --danger-color: #dc3545;
+
+            /* Tipografia */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --font-code: 'Fira Code', 'Courier New', Courier, monospace;
+
+            /* Layout */
+            --border-radius-sm: 8px;
+            --border-radius-md: 16px;
+            --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--bg-color);
+            color: var(--text-body);
+            line-height: 1.7;
+            padding: 2rem;
+        }
+
+        /* --- 2. Layout Principal --- */
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 1rem 0;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-bottom: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* --- 3. Tipografia e Títulos --- */
+        h1 {
+            font-size: clamp(2.2rem, 5vw, 3.5rem); /* Fonte fluida */
+            font-weight: 800;
+            color: var(--text-title);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin: 0 auto;
+            max-width: 650px; /* Limita a largura do parágrafo */
+        }
+
+        /* --- 4. Estilos do Hub (NOVO) --- */
+        .hub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .module-card {
+            display: block;
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-md);
+            padding: 2rem;
+            text-decoration: none;
+            color: var(--text-body);
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .module-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--primary-color);
+        }
+
+        .module-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .module-card h3 {
+            font-size: 1.5rem;
+            color: var(--text-title);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .module-card p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 0; /* Remove margem inferior do parágrafo no card */
+        }
+        
+        /* --- 5. Responsividade --- */
+
+        @media (max-width: 992px) {
+            body {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            header p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 1rem;
+            }
+            .hub-grid {
+                grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+            }
+        }

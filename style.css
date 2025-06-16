@@ -1,163 +1,285 @@
 /* --- 1. Reset e Configurações Globais --- */
+:root {
+    /* Paleta de Cores */
+    --primary-color: #007BFF;
+    --primary-hover: #0056b3;
+    --text-title: #1a202c;
+    --text-body: #343a40;
+    --text-muted: #6c757d;
+    --bg-color: #f4f7f9;
+    --surface-color: #ffffff;
+    --border-color: #e9ecef;
+    --code-bg-dark: #282c34;
+    --code-bg-light: #e9ecef;
+    --danger-color: #dc3545;
+
+    /* Tipografia */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-code: 'Fira Code', 'Courier New', Courier, monospace;
+
+    /* Layout */
+    --border-radius-sm: 8px;
+    --border-radius-md: 16px;
+    --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Garante que padding não afete a largura final */
+    box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth; /* Rolagem suave ao clicar em links internos (se houver) */
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background-color: #f0f2f5; /* Um fundo cinza-azulado muito claro, comum em apps modernos */
-    color: #4a4a4a; /* Cor de texto principal mais suave que o preto puro */
-    line-height: 1.7; /* Espaçamento entre linhas para melhor leitura */
+    font-family: var(--font-primary);
+    background-color: var(--bg-color);
+    color: var(--text-body);
+    line-height: 1.7;
     padding: 2rem;
 }
 
 /* --- 2. Layout Principal --- */
 header {
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
+    padding: 1rem 0;
 }
 
 main {
-    max-width: 950px;
-    margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
-    background: #ffffff;
-    border-radius: 16px; /* Bordas bem curvas! */
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--surface-color);
+    border-radius: var(--border-radius-md);
     padding: 2.5rem 3rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07); /* Sombra suave para efeito de "flutuação" */
-    transition: transform 0.3s ease;
+    box-shadow: var(--shadow-medium);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
 }
 
 main:hover {
-    transform: translateY(-5px); /* Efeito sutil ao passar o mouse */
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 footer {
     text-align: center;
-    margin-top: 3rem;
-    color: #999;
+    margin-top: 4rem;
+    padding-bottom: 2rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
 }
 
 /* --- 3. Tipografia e Títulos --- */
 h1 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: #1a202c;
+    font-size: clamp(2.2rem, 5vw, 3rem); /* Fonte fluida */
+    font-weight: 800;
+    color: var(--text-title);
     margin-bottom: 0.5rem;
-}
-
-header p {
-    font-size: 1.25rem;
-    color: #6c757d;
+    line-height: 1.2;
 }
 
 h2 {
-    font-size: 2rem;
-    color: #123697; /* Azul vibrante para destaque */
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 3px solid #e9ecef;
+    font-size: clamp(1.5rem, 3vw, 3rem); /* Fonte fluida */
+    font-weight: 800;
+    color: var(--text-title);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
 }
 
-h3, h4 {
-    font-size: 1.4rem;
-    color: #343a40;
+
+header p {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+h2.subtitle {
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
+    color: var(--primary-color);
     margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--border-color);
+    font-weight: 700;
+}
+
+section:first-of-type h2.subtitle {
+    margin-top: 0; /* Remove a margem do topo do primeiro subtítulo */
 }
 
 p, li {
     font-size: 1.1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
 }
 
 strong {
-    color: #dc3545; /* Vermelho para dar ênfase */
-    font-weight: 700;
+    color: var(--danger-color);
+    font-weight: 600;
 }
 
-/* --- 4. Elementos Específicos --- */
-hr {
-    border: none;
-    height: 2px;
-    background: linear-gradient(to right, transparent, #e9ecef, transparent);
-    margin: 4rem 0;
-}
-
+/* --- 4. Links e Botões --- */
 a {
-    color: #007BFF;
+    color: var(--primary-color);
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 600;
     transition: color 0.2s ease-in-out;
 }
 
 a:hover {
-    color: #0056b3;
+    color: var(--primary-hover);
     text-decoration: underline;
 }
 
-ul {
-    list-style: none; /* Remove os marcadores padrão */
-    padding-left: 0;
+/* Contêiner dos botões no cabeçalho */
+header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.8rem; /* Espaçamento entre os botões */
 }
 
-ul li::before {
-    content: "▹"; /* Adiciona um marcador personalizado */
-    color: #007BFF;
-    font-weight: bold;
+/* Estilo unificado para botões de navegação e afiliados */
+header nav a,
+.afiliados a {
     display: inline-block;
-    width: 1em;
-    margin-left: -1em;
+    background-color: var(--primary-color);
+    color: var(--surface-color);
+    padding: 12px 24px;
+    margin: 0; /* Removido pois 'gap' já cuida do espaçamento */
+    border-radius: var(--border-radius-sm);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 2px solid transparent;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s ease;
+}
+
+header nav a:hover,
+.afiliados a:hover {
+    background-color: var(--primary-hover);
+    color: var(--surface-color);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 86, 179, 0.25);
+    text-decoration: none;
+}
+
+/* Adiciona um estado de foco para acessibilidade */
+header nav a:focus-visible,
+.afiliados a:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
 }
 
 /* --- 5. Estilos para Blocos de Código --- */
+/* Código inline */
 code {
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #e9ecef;
+    font-family: var(--font-code);
+    background-color: var(--code-bg-light);
     padding: 0.2em 0.4em;
-    border-radius: 6px; /* Bordas curvas */
-    font-size: 0.9em;
-    color: #c7254e;
+    border-radius: 4px;
+    font-size: 0.95em;
+    color: var(--danger-color);
 }
 
+/* Bloco de código */
 pre {
-    background-color: #282c34; /* Fundo escuro (estilo VS Code) */
+    background-color: var(--code-bg-dark);
     color: #abb2bf;
     padding: 1.5rem;
-    border-radius: 12px; /* Bordas curvas */
+    border-radius: var(--border-radius-sm);
     overflow-x: auto;
-    white-space: pre-wrap;
-    margin-top: 1rem;
+    margin: 1rem 0 2rem 0;
     box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
 }
 
-pre > code {
+pre code {
     background-color: transparent;
     color: inherit;
     padding: 0;
     font-size: 1em;
+    line-height: 1.6;
 }
 
-/* --- 6. Responsividade para telas menores --- */
-@media (max-width: 768px) {
+/* --- 6. Elementos Diversos --- */
+ul {
+    list-style: none;
+    padding-left: 1.5rem;
+}
+
+ul li {
+    position: relative;
+}
+
+/* --- 7. Responsividade --- */
+
+/* Telas de Tablet (e.g., iPads) */
+@media (max-width: 992px) {
     body {
-        padding: 1rem;
+        padding: 1.5rem;
     }
 
+    main {
+        padding: 2rem 2.5rem;
+    }
+}
+
+/* Telas de Tablet Pequeno e Celulares Grandes */
+@media (max-width: 768px) {
     main {
         padding: 2rem 1.5rem;
     }
 
     h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
+    }
+    
+    header p {
+        font-size: 1.1rem;
     }
 
-    h2 {
+    h2.subtitle {
         font-size: 1.7rem;
+    }
+
+    p, li {
+        font-size: 1rem;
+    }
+}
+
+/* Telas de Celular */
+@media (max-width: 480px) {
+    body {
+        padding: 1rem;
+        line-height: 1.6;
+    }
+    
+    header {
+        margin-bottom: 2rem;
+    }
+
+    main {
+        padding: 1.5rem 1rem;
+        border-radius: var(--border-radius-sm);
+    }
+
+    header nav {
+       flex-direction: column; /* Empilha os botões verticalmente */
+       align-items: stretch; /* Faz os botões ocuparem a largura total */
+    }
+
+    header nav a,
+    .afiliados a {
+        text-align: center;
+        padding: 14px 20px; /* Aumenta a área de toque */
+    }
+
+    pre {
+        padding: 1rem;
     }
 }
